@@ -1,0 +1,961 @@
+:root {
+  --orange: #f56600;
+  --dark: #545454;
+  --text: #111111;
+  --muted: #555555;
+  --line: #bdbdbd;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #ffffff;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1210px, calc(100% - 72px));
+  margin: 0 auto;
+}
+
+.section-white {
+  background: #ffffff;
+}
+
+.section-dark {
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 162px;
+  min-height: 58px;
+  padding: 15px 30px;
+  background: var(--orange);
+  color: #ffffff;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.section-title {
+  position: relative;
+  margin: 0;
+  padding-left: 42px;
+  color: var(--dark);
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 3px;
+  height: 78px;
+  background: currentColor;
+}
+
+.section-title.light {
+  color: #ffffff;
+}
+
+.hero {
+  min-height: 768px;
+  isolation: isolate;
+}
+
+.hero-bg,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.strength-bg,
+.strength-overlay {
+  display: none;
+}
+
+.hero-bg {
+  z-index: -1;
+  background: url("images/hero-automation.png") center 58% / 112% auto no-repeat;
+  opacity: 0.2;
+}
+
+.hero-overlay {
+  z-index: -2;
+  background: #545454;
+}
+
+.hero-inner {
+  position: relative;
+  width: min(1240px, calc(100% - 96px));
+  min-height: 768px;
+  margin: 0 auto;
+}
+
+.logo-wrap {
+  position: absolute;
+  top: 18px;
+  left: -22px;
+  width: 156px;
+  height: 142px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.logo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 8px -4px 2px -4px;
+  background: rgba(84, 84, 84, 0.1);
+  border-radius: 8px;
+}
+
+.logo {
+  position: relative;
+  width: 137px;
+  height: auto;
+}
+
+.hero-copy {
+  position: absolute;
+  top: 172px;
+  left: 380px;
+  width: 780px;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(46px, 5.1vw, 72px);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+.hero-button {
+  margin-top: 38px;
+  margin-left: 515px;
+}
+
+.hero-points {
+  position: absolute;
+  left: -26px;
+  bottom: 143px;
+  padding-left: 22px;
+  border-left: 4px solid var(--orange);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.hero-points p {
+  position: relative;
+  margin: 0;
+}
+
+.hero-points p:nth-child(3) {
+  padding-bottom: 12px;
+}
+
+.hero-points p:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 230px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hero-points span,
+.hero-points strong {
+  color: var(--orange);
+}
+
+.hero-points span {
+  display: inline-block;
+  min-width: 56px;
+}
+
+.hero-points strong {
+  font-weight: 700;
+}
+
+.event-info {
+  position: absolute;
+  left: 50%;
+  bottom: 37px;
+  transform: translateX(-50%);
+  min-width: 360px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.event-info p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.45;
+}
+
+.event-title {
+  border-bottom: 2px solid #ffffff;
+}
+
+.booth-info {
+  position: absolute;
+  right: 0;
+  bottom: 48px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.problems {
+  padding: 84px 0 162px;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 88px;
+  margin-top: 106px;
+}
+
+.problem-item {
+  min-height: 280px;
+}
+
+.quote-mark {
+  height: 72px;
+  color: #646464;
+  font-family: Georgia, serif;
+  font-size: 126px;
+  font-weight: 700;
+  line-height: 0.75;
+}
+
+.problem-item h3 {
+  margin: 8px 0 15px;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.42;
+}
+
+.problem-item p {
+  margin: 0;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.problem-item .audience {
+  margin-top: 34px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.solutions {
+  padding: 0 0 92px;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 47px;
+  margin-top: 58px;
+}
+
+.solution-card {
+  overflow: hidden;
+  border: 1px solid #d0c7bb;
+  background: #ffffff;
+}
+
+.solution-card img {
+  width: 100%;
+  height: 236px;
+  object-fit: cover;
+}
+
+.solution-card:nth-child(3) img {
+  width: 200%;
+  max-width: none;
+  object-position: left center;
+}
+
+.solution-body {
+  min-height: 186px;
+  padding: 25px 24px 24px;
+  text-align: center;
+}
+
+.solution-body h3 {
+  margin: 0 0 15px;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.38;
+}
+
+.solution-body p {
+  margin: 0;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.strengths {
+  min-height: 704px;
+  isolation: isolate;
+  background: var(--dark);
+}
+
+.strength-inner {
+  position: relative;
+  padding: 84px 0 76px;
+}
+
+.strength-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 70px 40px;
+  width: min(1180px, 100%);
+  margin-top: 72px;
+  margin-left: 18px;
+}
+
+.strength-item {
+  display: grid;
+  grid-template-columns: 162px 1fr;
+  align-items: center;
+  gap: 34px;
+}
+
+.strength-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 162px;
+  height: 162px;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  outline: 4px solid var(--orange);
+  background: var(--orange);
+  color: #ffffff;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.strength-item p {
+  max-width: 380px;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.flow {
+  padding: 84px 0 72px;
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  margin-top: 70px;
+}
+
+.flow-step {
+  position: relative;
+  text-align: center;
+}
+
+.flow-step::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 246px;
+  width: 1px;
+  height: 64px;
+  background: #b5b5b5;
+}
+
+.flow-step > p {
+  margin: 78px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.step-label,
+.flow-step h3 {
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.flow-step > p {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+}
+
+.step-label {
+  position: relative;
+  height: 54px;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  padding-top: 23px;
+  color: var(--dark);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.step-label span {
+  color: var(--orange);
+}
+
+.step-label::after,
+.step-label::before,
+.step-icon::after,
+.step-icon::before {
+  content: "";
+  position: absolute;
+  background: var(--orange);
+}
+
+.step-label::after {
+  right: -1px;
+  top: -6px;
+  width: 6px;
+  height: 38px;
+}
+
+.step-label::before {
+  right: -1px;
+  top: -6px;
+  width: 38px;
+  height: 6px;
+}
+
+.flow-step h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75px;
+  margin: 0;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  color: #111111;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.38;
+}
+
+.step-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 118px;
+  border: 1px solid var(--line);
+  border-top: 0;
+}
+
+.step-icon::after {
+  left: -1px;
+  bottom: -6px;
+  width: 6px;
+  height: 38px;
+}
+
+.step-icon::before {
+  left: -1px;
+  bottom: -6px;
+  width: 38px;
+  height: 6px;
+}
+
+.step-icon svg {
+  width: 74px;
+  height: 74px;
+  fill: none;
+  stroke: #5d5d5d;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.step-icon img {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.cta {
+  background: #ffffff;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-rows: 560px 300px;
+}
+
+.cta-panel {
+  padding: 78px 72px 50px max(78px, calc((100vw - 1210px) / 2));
+  background: var(--orange);
+  color: #ffffff;
+}
+
+.cta-panel h2 {
+  position: relative;
+  margin: 0;
+  padding-left: 34px;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.14;
+}
+
+.cta-panel h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 3px;
+  height: 72px;
+  background: #ffffff;
+}
+
+.cta-panel p {
+  margin: 54px 0 0;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.cta-button {
+  min-width: 250px;
+  min-height: 58px;
+  margin-top: 54px;
+  padding: 20px 28px;
+  background: var(--dark);
+  font-size: 22px;
+}
+
+.cta-consult,
+.cta-factory {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta-consult {
+  object-position: center;
+}
+
+.cta-factory {
+  object-position: center;
+}
+
+.cta-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 86px 0 96px;
+  background: var(--dark);
+  color: #ffffff;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.cta-event p {
+  margin: 0 0 6px;
+}
+
+.cta-event-line {
+  white-space: nowrap;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: center;
+  min-height: 67px;
+  padding: 0 83px;
+  color: #111111;
+  background: #ffffff;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer > p {
+  grid-column: 2;
+  text-align: center;
+}
+
+.footer div {
+  grid-column: 3;
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+@media (max-width: 1100px) {
+  .hero-inner {
+    width: min(100% - 56px, 920px);
+  }
+
+  .hero-copy {
+    left: 260px;
+    width: calc(100% - 260px);
+  }
+
+  .hero-button {
+    margin-left: 42%;
+  }
+
+  .problem-grid,
+  .solution-grid {
+    gap: 34px;
+  }
+
+  .strength-grid {
+    gap: 54px 70px;
+  }
+
+  .flow-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 36px, 520px);
+  }
+
+  .section-title {
+    padding-left: 24px;
+    font-size: 30px;
+  }
+
+  .section-title::before {
+    top: 6px;
+    height: 48px;
+  }
+
+  .button {
+    min-height: 50px;
+    min-width: 150px;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero-bg {
+    background-position: 58% 48%;
+    background-size: auto 118%;
+    opacity: 0.2;
+  }
+
+  .hero-inner {
+    width: calc(100% - 32px);
+    min-height: 720px;
+  }
+
+  .logo {
+    width: 86px;
+  }
+
+  .logo-wrap {
+    width: 104px;
+    height: 96px;
+    top: 14px;
+    left: -8px;
+  }
+
+  .hero-copy {
+    top: 136px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(35px, 10.5vw, 50px);
+    line-height: 1.48;
+  }
+
+  .hero-button {
+    margin: 34px auto 0;
+  }
+
+  .hero-points {
+    left: 0;
+    bottom: 150px;
+    font-size: 23px;
+    text-align: left;
+  }
+
+  .event-info {
+    bottom: 66px;
+    min-width: 280px;
+  }
+
+  .event-info p {
+    font-size: 14px;
+  }
+
+  .booth-info {
+    right: 50%;
+    bottom: 28px;
+    transform: translateX(50%);
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .problems {
+    padding: 60px 0 84px;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    margin-top: 58px;
+  }
+
+  .problem-item {
+    min-height: auto;
+  }
+
+  .quote-mark {
+    height: 54px;
+    font-size: 96px;
+  }
+
+  .solutions {
+    padding-bottom: 72px;
+  }
+
+  .solution-grid {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .solution-card img,
+  .solution-card:nth-child(3) img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1.48 / 1;
+  }
+
+  .strengths {
+    min-height: auto;
+  }
+
+  .strength-inner {
+    padding: 62px 0;
+  }
+
+  .strength-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin: 46px 0 0;
+  }
+
+  .strength-item {
+    grid-template-columns: 118px 1fr;
+    gap: 22px;
+  }
+
+  .strength-badge {
+    width: 118px;
+    height: 118px;
+    font-size: 23px;
+  }
+
+  .strength-item p {
+    font-size: 16px;
+  }
+
+  .flow {
+    padding: 60px 0 70px;
+  }
+
+  .flow-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    margin-top: 46px;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 116px 1fr;
+    grid-template-areas:
+      "card body";
+    column-gap: 18px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .flow-step::after {
+    display: none;
+  }
+
+  .step-label,
+  .flow-step h3,
+  .step-icon {
+    grid-column: 1;
+  }
+
+  .step-label {
+    height: 46px;
+    padding-top: 17px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .flow-step h3 {
+    min-height: 60px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .step-icon {
+    height: 94px;
+  }
+
+  .step-icon svg {
+    width: 58px;
+    height: 58px;
+  }
+
+  .flow-step > p {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .cta-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .cta-panel {
+    padding: 52px 28px 48px;
+  }
+
+  .cta-panel h2 {
+    padding-left: 24px;
+    font-size: 34px;
+  }
+
+  .cta-panel p {
+    margin-top: 34px;
+    font-size: 14px;
+  }
+
+  .cta-button {
+    margin-top: 34px;
+  }
+
+  .cta-consult,
+  .cta-factory {
+    height: 250px;
+  }
+
+  .cta-event {
+    min-height: 210px;
+    padding: 0 32px;
+    font-size: 20px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 22px 18px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .footer > p,
+  .footer div {
+    text-align: center;
+  }
+
+  .footer div {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-copy h1 {
+    font-size: 34px;
+  }
+
+  .hero-points {
+    font-size: 21px;
+  }
+
+  .hero-points span {
+    min-width: 48px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+}
