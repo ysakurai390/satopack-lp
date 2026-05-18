@@ -166,6 +166,10 @@ a {
   white-space: nowrap;
 }
 
+.mobile-break {
+  display: none;
+}
+
 .hero-button {
   margin-top: 38px;
   margin-left: 515px;
@@ -246,49 +250,94 @@ a {
 }
 
 .problems {
-  padding: 84px 0 162px;
+  padding: 84px 0 142px;
 }
 
 .problem-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 88px;
-  margin-top: 106px;
+  gap: 56px;
+  margin-top: 110px;
 }
 
 .problem-item {
-  min-height: 280px;
+  --problem-color: var(--orange);
+  position: relative;
+  min-height: 320px;
+  padding-top: 124px;
 }
 
-.quote-mark {
-  height: 72px;
-  color: #646464;
-  font-family: Georgia, serif;
-  font-size: 126px;
+.problem-item::before {
+  content: "";
+  position: absolute;
+  left: 98px;
+  right: -42px;
+  top: 49px;
+  height: 2px;
+  background: #8d8d8d;
+}
+
+.problem-item::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  top: 45px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #8d8d8d;
+}
+
+.problem-item-orange {
+  --problem-color: var(--orange);
+}
+
+.problem-item-blue {
+  --problem-color: #2ea7e0;
+}
+
+.problem-item-green {
+  --problem-color: #00a95f;
+}
+
+.problem-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 5px solid var(--problem-color);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--problem-color);
+  font-size: 38px;
   font-weight: 700;
-  line-height: 0.75;
+  line-height: 1;
 }
 
 .problem-item h3 {
-  margin: 8px 0 15px;
+  margin: 0 0 18px;
   font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
-  font-size: 17px;
+  font-size: 23px;
   font-weight: 800;
-  line-height: 1.42;
+  line-height: 1.45;
 }
 
 .problem-item p {
   margin: 0;
-  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.75;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.8;
 }
 
 .problem-item .audience {
-  margin-top: 34px;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
-  font-size: 18px;
+  margin-top: 36px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -704,8 +753,8 @@ a {
   }
 
   .hero-bg {
-    background-position: 58% 48%;
-    background-size: auto 118%;
+    background-position: 43% 50%;
+    background-size: auto 120%;
     opacity: 0.2;
   }
 
@@ -772,17 +821,44 @@ a {
 
   .problem-grid {
     grid-template-columns: 1fr;
-    gap: 42px;
+    gap: 54px;
     margin-top: 58px;
   }
 
   .problem-item {
     min-height: auto;
+    padding-top: 100px;
   }
 
-  .quote-mark {
-    height: 54px;
-    font-size: 96px;
+  .problem-item::before {
+    left: 86px;
+    right: 0;
+    top: 39px;
+  }
+
+  .problem-item::after {
+    right: 0;
+    top: 35px;
+  }
+
+  .problem-number {
+    width: 82px;
+    height: 82px;
+    border-width: 4px;
+    font-size: 30px;
+  }
+
+  .problem-item h3 {
+    font-size: 20px;
+  }
+
+  .problem-item p {
+    font-size: 15px;
+  }
+
+  .problem-item .audience {
+    margin-top: 24px;
+    font-size: 18px;
   }
 
   .solutions {
@@ -798,8 +874,15 @@ a {
   .solution-card:nth-child(3) img {
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 240px;
     aspect-ratio: 1.48 / 1;
+    object-fit: cover;
+  }
+
+  .solution-card:nth-child(3) img {
+    width: 125%;
+    max-width: none;
+    object-position: right center;
   }
 
   .strengths {
@@ -833,6 +916,14 @@ a {
 
   .flow {
     padding: 60px 0 70px;
+  }
+
+  .flow .section-title {
+    max-width: 340px;
+  }
+
+  .mobile-break {
+    display: inline;
   }
 
   .flow-grid {
@@ -926,10 +1017,10 @@ a {
 
   .footer {
     grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 22px 18px;
+    gap: 6px;
+    padding: 18px 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .footer > p,
@@ -938,7 +1029,8 @@ a {
   }
 
   .footer div {
-    font-size: 15px;
+    font-size: 13px;
+    line-height: 1.35;
   }
 }
 
