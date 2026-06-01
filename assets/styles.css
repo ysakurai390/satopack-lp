@@ -264,29 +264,15 @@ a {
   --problem-color: var(--orange);
   position: relative;
   min-height: 320px;
-  padding-top: 124px;
+  padding-top: 92px;
 }
 
 .problem-item::before {
-  content: "";
-  position: absolute;
-  left: 98px;
-  right: -42px;
-  top: 49px;
-  height: 2px;
-  background: #8d8d8d;
+  display: none;
 }
 
 .problem-item::after {
-  content: "";
-  position: absolute;
-  right: -42px;
-  top: 45px;
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 8px solid #8d8d8d;
+  display: none;
 }
 
 .problem-item-orange {
@@ -303,21 +289,15 @@ a {
 
 .problem-number {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -2px;
+  top: 4px;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  border: 5px solid var(--problem-color);
-  border-radius: 50%;
-  background: #ffffff;
   color: var(--problem-color);
-  font-size: 38px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 82px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 0.8;
+  letter-spacing: 0;
 }
 
 .problem-item h3 {
@@ -342,7 +322,118 @@ a {
 }
 
 .solutions {
-  padding: 0 0 92px;
+  padding: 0 0 76px;
+}
+
+.waste-list {
+  width: min(1040px, 100%);
+  margin: 58px auto 0;
+}
+
+.waste-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 92px 1fr 270px;
+  align-items: center;
+  min-height: 110px;
+  margin-bottom: 22px;
+  border: 1px solid #d8d8d8;
+  background: #ffffff;
+  box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.waste-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  width: 2px;
+  height: 22px;
+  background: var(--orange);
+}
+
+.waste-item:last-child::after {
+  display: none;
+}
+
+.waste-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  margin-left: 24px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #ffffff;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.waste-text {
+  padding: 16px 18px 16px 8px;
+}
+
+.waste-text h3 {
+  margin: 0 0 4px;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.waste-text p {
+  margin: 0;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.waste-item img {
+  width: 100%;
+  height: 108px;
+  object-fit: cover;
+}
+
+.automation-support {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 42px;
+  width: min(1040px, 100%);
+  margin: 64px auto 0;
+}
+
+.automation-copy {
+  text-align: center;
+}
+
+.automation-copy h3 {
+  display: inline-block;
+  margin: 0 0 16px;
+  border-bottom: 2px solid var(--orange);
+  color: var(--dark);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.automation-copy p {
+  margin: 0;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.automation-support img {
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  object-fit: cover;
+  box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.28);
 }
 
 .solution-grid {
@@ -393,14 +484,14 @@ a {
 }
 
 .strengths {
-  min-height: 704px;
+  min-height: 1120px;
   isolation: isolate;
   background: var(--dark);
 }
 
 .strength-inner {
   position: relative;
-  padding: 84px 0 76px;
+  padding: 84px 0 78px;
 }
 
 .strength-grid {
@@ -444,6 +535,72 @@ a {
   font-size: 19px;
   font-weight: 800;
   line-height: 1.55;
+}
+
+.improvement {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+  gap: 54px;
+  margin-top: 76px;
+}
+
+.improvement-copy {
+  color: #ffffff;
+}
+
+.improvement-copy h3 {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.improvement-copy h3 .accent {
+  color: var(--orange);
+}
+
+.improvement-copy h3 span:not(.accent) {
+  color: #ffffff;
+}
+
+.improvement-copy ol {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.improvement-copy li {
+  margin-top: 15px;
+  color: #ffffff;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.improvement-copy li span {
+  margin-right: 10px;
+  color: var(--orange);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.improvement-copy li strong {
+  display: inline-block;
+  margin-bottom: 2px;
+  color: #ffffff;
+  font-size: 23px;
+}
+
+.improvement img {
+  width: 100%;
+  max-width: 520px;
+  justify-self: center;
 }
 
 .flow {
@@ -668,6 +825,100 @@ a {
   white-space: nowrap;
 }
 
+.proof {
+  background: var(--dark);
+}
+
+.proof-inner {
+  position: relative;
+  padding: 58px 0 70px;
+  text-align: center;
+}
+
+.proof-inner::before {
+  display: none;
+}
+
+.proof-inner h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.proof-cards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 54px;
+  width: min(940px, 100%);
+  margin: 42px auto 0;
+}
+
+.proof-cards::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: -120px;
+  right: -120px;
+  top: 50%;
+  height: 82px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    90deg,
+    rgba(245, 102, 0, 0) 0%,
+    rgba(245, 102, 0, 0.42) 18%,
+    rgba(245, 102, 0, 0.86) 50%,
+    rgba(245, 102, 0, 0.42) 82%,
+    rgba(245, 102, 0, 0) 100%
+  );
+  opacity: 0.72;
+}
+
+.proof-card {
+  position: relative;
+  z-index: 1;
+  min-height: 210px;
+  padding: 28px 14px 20px;
+  border-left: 8px solid var(--orange);
+  background: #ffffff;
+  color: var(--dark);
+  box-shadow: 8px 10px 0 rgba(245, 102, 0, 0.22);
+}
+
+.proof-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 14px;
+  object-fit: contain;
+}
+
+.proof-card p {
+  margin: 0;
+  color: var(--dark);
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.proof-card strong {
+  color: var(--dark);
+  font-size: 44px;
+}
+
+.proof-card span {
+  display: block;
+  margin-top: 12px;
+  color: var(--dark);
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .footer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -715,6 +966,10 @@ a {
   .problem-grid,
   .solution-grid {
     gap: 34px;
+  }
+
+  .waste-item {
+    grid-template-columns: 86px 1fr 220px;
   }
 
   .strength-grid {
@@ -827,25 +1082,21 @@ a {
 
   .problem-item {
     min-height: auto;
-    padding-top: 100px;
+    padding-top: 76px;
   }
 
   .problem-item::before {
-    left: 86px;
-    right: 0;
-    top: 39px;
+    display: none;
   }
 
   .problem-item::after {
-    right: 0;
-    top: 35px;
+    display: none;
   }
 
   .problem-number {
-    width: 82px;
-    height: 82px;
-    border-width: 4px;
-    font-size: 30px;
+    left: -2px;
+    top: 0;
+    font-size: 68px;
   }
 
   .problem-item h3 {
@@ -863,6 +1114,70 @@ a {
 
   .solutions {
     padding-bottom: 72px;
+  }
+
+  .waste-list {
+    margin-top: 40px;
+  }
+
+  .waste-item {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    min-height: auto;
+    padding: 28px 20px 22px;
+    text-align: center;
+  }
+
+  .waste-item::after {
+    left: 50%;
+  }
+
+  .waste-number {
+    width: 62px;
+    height: 62px;
+    margin: 0 0 14px;
+    font-size: 22px;
+  }
+
+  .waste-text {
+    padding: 0;
+  }
+
+  .waste-text h3 {
+    font-size: 20px;
+  }
+
+  .waste-text p {
+    font-size: 14px;
+  }
+
+  .waste-item img {
+    width: min(100%, 280px);
+    height: 112px;
+    margin-top: 18px;
+  }
+
+  .automation-support {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 54px;
+  }
+
+  .automation-copy {
+    text-align: center;
+  }
+
+  .automation-copy h3 {
+    font-size: 25px;
+  }
+
+  .automation-copy p {
+    font-size: 15px;
+  }
+
+  .automation-support img {
+    width: min(100%, 440px);
+    justify-self: center;
   }
 
   .solution-grid {
@@ -913,6 +1228,34 @@ a {
 
   .strength-item p {
     font-size: 16px;
+  }
+
+  .improvement {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 58px;
+    text-align: center;
+  }
+
+  .improvement-copy ol {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .improvement-copy h3 {
+    font-size: 29px;
+  }
+
+  .improvement-copy li {
+    font-size: 14px;
+  }
+
+  .improvement-copy li strong {
+    font-size: 19px;
+  }
+
+  .improvement img {
+    width: min(100%, 420px);
   }
 
   .flow {
@@ -1014,6 +1357,57 @@ a {
     min-height: 210px;
     padding: 0 32px;
     font-size: 20px;
+  }
+
+  .proof-inner {
+    padding: 40px 0 44px;
+  }
+
+  .proof-inner::before {
+    display: none;
+  }
+
+  .proof-inner h2 {
+    font-size: 18px;
+  }
+
+  .proof-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .proof-cards::before {
+    left: -18px;
+    right: -18px;
+    height: 36px;
+  }
+
+  .proof-card {
+    min-height: 118px;
+    padding: 14px 4px 10px;
+    border-left-width: 4px;
+    box-shadow: 4px 5px 0 rgba(245, 102, 0, 0.22);
+  }
+
+  .proof-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 8px;
+  }
+
+  .proof-card p {
+    font-size: 9px;
+  }
+
+  .proof-card strong {
+    font-size: 21px;
+  }
+
+  .proof-card span {
+    margin-top: 6px;
+    font-size: 7px;
   }
 
   .footer {
