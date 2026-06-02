@@ -13,6 +13,21 @@
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-inner">
+          <nav class="hero-nav" aria-label="ページ内ナビゲーション">
+            <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="hero-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul id="hero-menu" class="hero-menu">
+              <li><a href="#issue">ISSUE</a></li>
+              <li><a href="#solution">SOLUTION</a></li>
+              <li><a href="#strength">STRENGTH</a></li>
+              <li><a href="#flow">FLOW</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+          </nav>
+
           <div class="logo-wrap">
             <img class="logo" src="assets/images/logo.png" alt="SATO PACK">
           </div>
@@ -37,8 +52,9 @@
         </div>
       </section>
 
-      <section class="problems section-white">
+      <section id="issue" class="problems section-white">
         <div class="container">
+          <div class="section-kicker">ISSUE</div>
           <h2 class="section-title">製造現場で、こんな課題ありませんか？</h2>
           <div class="problem-grid">
             <article class="problem-item problem-item-orange">
@@ -63,8 +79,9 @@
         </div>
       </section>
 
-      <section class="solutions section-white">
+      <section id="solution" class="solutions section-white">
         <div class="container">
+          <div class="section-kicker">SOLUTION</div>
           <h2 class="section-title">トレイ設計で現場の無駄を減らす</h2>
           <div class="waste-list">
             <article class="waste-item">
@@ -103,10 +120,11 @@
         </div>
       </section>
 
-      <section class="strengths section-dark">
+      <section id="strength" class="strengths section-dark">
         <div class="strength-bg" aria-hidden="true"></div>
         <div class="strength-overlay" aria-hidden="true"></div>
         <div class="container strength-inner">
+          <div class="section-kicker light">STRENGTH</div>
           <h2 class="section-title light">サトウパックが選ばれる理由</h2>
           <div class="strength-grid">
             <article class="strength-item">
@@ -140,8 +158,9 @@
         </div>
       </section>
 
-      <section class="flow section-white">
+      <section id="flow" class="flow section-white">
         <div class="container">
+          <div class="section-kicker">FLOW</div>
           <h2 class="section-title">工業用トレイ<span class="mobile-break"><br></span>立上げの流れ</h2>
           <div class="flow-grid">
             <article class="flow-step">
@@ -196,9 +215,10 @@
         </div>
       </section>
 
-      <section class="cta">
+      <section id="contact" class="cta">
         <div class="cta-grid">
           <div class="cta-panel">
+            <div class="section-kicker light cta-kicker">CONTACT</div>
             <h2>工業用トレイの<br>ご相談はお気軽に</h2>
             <p>ワーク形状・自動機の条件・数量・材質など、<br>まだ仕様が固まっていない段階でもご相談いただけます。</p>
             <a class="button cta-button" href="http://satopack.jp/contact/">お問い合わせフォームへ</a>
@@ -248,5 +268,6 @@
         <p>受付時間 平日 9:00〜18:00</p>
       </div>
     </footer>
+    <script src="assets/script.js"></script>
   </body>
 </html>

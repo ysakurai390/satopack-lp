@@ -15,6 +15,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 24px;
+}
+
 body {
   margin: 0;
   color: var(--text);
@@ -87,6 +91,41 @@ a {
   color: #ffffff;
 }
 
+.section-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: min(330px, 36%);
+  margin: 0 52px 16px auto;
+  color: var(--dark);
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.section-kicker::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(245, 102, 0, 0.55);
+}
+
+.section-kicker.light {
+  color: #ffffff;
+}
+
+.section-kicker.light::before {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.cta-kicker {
+  width: 180px;
+  margin: -34px 16px 18px auto;
+}
+
 .hero {
   min-height: 768px;
   isolation: isolate;
@@ -119,6 +158,63 @@ a {
   width: min(1240px, calc(100% - 96px));
   min-height: 768px;
   margin: 0 auto;
+}
+
+.hero-nav {
+  position: absolute;
+  top: 38px;
+  right: 2px;
+  z-index: 5;
+}
+
+.hero-menu {
+  display: flex;
+  gap: clamp(24px, 3vw, 54px);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-menu a {
+  position: relative;
+  display: inline-block;
+  padding: 6px 0;
+  color: #ffffff;
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: clamp(15px, 1.25vw, 22px);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.hero-menu a:hover,
+.hero-menu a:focus-visible {
+  color: var(--orange);
+}
+
+.hero-menu a:hover::after,
+.hero-menu a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .logo-wrap {
@@ -954,6 +1050,14 @@ a {
     width: min(100% - 56px, 920px);
   }
 
+  .hero-menu {
+    gap: 24px;
+  }
+
+  .hero-menu a {
+    font-size: 15px;
+  }
+
   .hero-copy {
     left: 260px;
     width: calc(100% - 260px);
@@ -997,6 +1101,17 @@ a {
     height: 48px;
   }
 
+  .section-kicker {
+    width: min(220px, 58%);
+    margin: 0 8px 14px auto;
+    font-size: 11px;
+  }
+
+  .cta-kicker {
+    width: 150px;
+    margin: -22px 0 16px auto;
+  }
+
   .button {
     min-height: 50px;
     min-width: 150px;
@@ -1016,6 +1131,79 @@ a {
   .hero-inner {
     width: calc(100% - 32px);
     min-height: 720px;
+  }
+
+  .hero-nav {
+    top: 18px;
+    right: 0;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 7;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    background: rgba(84, 84, 84, 0.22);
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 0 auto;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hero-menu {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    z-index: 6;
+    display: grid;
+    gap: 0;
+    width: 190px;
+    padding: 13px 18px;
+    background: rgba(84, 84, 84, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .hero-nav.is-open .hero-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .hero-menu a {
+    display: block;
+    padding: 12px 0;
+    font-size: 15px;
+    text-align: right;
   }
 
   .logo {
